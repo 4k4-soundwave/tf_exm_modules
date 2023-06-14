@@ -1,45 +1,46 @@
 variable "aws_region" {
   description = "AWS region where the resources will be created."
   type        = string
-  default     = "eu-west-1"
+  // default     = "eu-west-1"
 }
 
 variable "image_name" {
-  default     = "amzn2-ami-kernel-*-x86_64-gp2"
+  // default     = "amzn2-ami-kernel-*-x86_64-gp2"
   type        = string
   description = "Amazon linux image name"
 }
 
 variable "policy_arn" {
-  default = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+  type = string
+  // default = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
 
 variable "CloudWatchFullAccess_policy" {
   type    = string
-  default = "arn:aws:iam::aws:policy/CloudWatchFullAccess"
+  // default = "arn:aws:iam::aws:policy/CloudWatchFullAccess"
 }
 
 variable "vpc_cidr_block" {
   description = "CIDR block for VPC"
   type        = string
-  default     = "172.16.0.0/16"
+  // default     = "172.16.0.0/16"
 }
 
 variable "cidr_ranges" {
   type = map(string)
   default = {
     //"full_network" = "172.16.0.0/16"
-    "pub_sub1"  = "172.16.1.0/24"
-    "pub_sub2"  = "172.16.3.0/24"
-    "prvt_sub1" = "172.16.4.0/24"
-    "prvt_sub2" = "172.16.5.0/24"
+   //  "pub_sub1"  = "172.16.1.0/24"
+   //  "pub_sub2"  = "172.16.3.0/24"
+   //  "prvt_sub1" = "172.16.4.0/24"
+   //  "prvt_sub2" = "172.16.5.0/24"
   }
 }
 
 variable "enable_dns_hostnames" {
   type        = bool
   description = "Enable DNS hostnames in VPC"
-  default     = true
+  // default     = true
 }
 
 variable "iam_role_ssm_mgmt" {
@@ -74,11 +75,11 @@ EOF
 variable "iam_role_name" {
   description = "Name of the IAM role."
   type        = string
-  default     = "ssm_selfmade"
+// default     = "ssm_selfmade"
 }
 
 variable "my_instance_profile" {
   description = "Instance profile"
   type        = string
-  default     = "instance-profile"
+  // default     = "instance-profile"
 }
